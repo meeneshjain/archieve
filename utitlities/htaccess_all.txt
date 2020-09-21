@@ -1,0 +1,89 @@
+# BEGIN Coupon N Deal
+Options +FollowSymLinks
+RewriteEngine on
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 month"
+ExpiresByType image/jpeg "access 1 month"
+ExpiresByType image/gif "access 1 month"
+ExpiresByType image/png "access 1 month"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 month"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+<IfModule mod_deflate.c>
+ # Compress HTML, CSS, JavaScript, Text, XML and fonts
+ AddOutputFilterByType DEFLATE application/javascript
+ AddOutputFilterByType DEFLATE application/rss+xml
+ AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+ AddOutputFilterByType DEFLATE application/x-font
+ AddOutputFilterByType DEFLATE application/x-font-opentype
+ AddOutputFilterByType DEFLATE application/x-font-otf
+ AddOutputFilterByType DEFLATE application/x-font-truetype
+ AddOutputFilterByType DEFLATE application/x-font-ttf
+ AddOutputFilterByType DEFLATE application/x-javascript
+ AddOutputFilterByType DEFLATE application/xhtml+xml
+ AddOutputFilterByType DEFLATE application/xml
+ AddOutputFilterByType DEFLATE font/opentype
+ AddOutputFilterByType DEFLATE font/otf
+ AddOutputFilterByType DEFLATE font/ttf
+ AddOutputFilterByType DEFLATE image/svg+xml
+ AddOutputFilterByType DEFLATE image/x-icon
+ AddOutputFilterByType DEFLATE text/css
+ AddOutputFilterByType DEFLATE text/html
+ AddOutputFilterByType DEFLATE text/javascript
+ AddOutputFilterByType DEFLATE text/plain
+ AddOutputFilterByType DEFLATE text/xml
+
+ # Remove browser bugs (only needed for really old browsers)
+ BrowserMatch ^Mozilla/4 gzip-only-text/html
+ BrowserMatch ^Mozilla/4\.0[678] no-gzip
+ BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+ Header append Vary User-Agent
+</IfModule>
+<ifModule mod_headers.c>
+ Header set Connection keep-alive
+</ifModule>
+
+# prevent endless loop
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+# redirect to pretty url
+RewriteCond %{QUERY_STRING} slug=(.+)
+RewriteRule ^store.php$ /store/%1? [R,L]
+RewriteRule ^category.php$ /category/%1? [R,L]
+RewriteRule ^locate.php$ /locate/%1? [R,L]
+RewriteRule ^tag.php$ /tag/%1? [R,L]
+RewriteRule ^coupon.php$ /coupon/%1? [R,L]
+RewriteRule ^coupons.php$ /coupons/%1? [R,L]
+RewriteRule ^page.php$ /page/%1? [R,L]
+RewriteRule ^privacy_policy.php$ /privacy_policy [R,L]
+RewriteRule ^myprofile.php$ /myprofile [R,L]
+RewriteRule ^register.php$ /register [R,L]
+RewriteRule ^subscribe.php$ /subscribe [R,L]
+
+
+
+
+# serve real content
+RewriteRule ^store/(.+)$ /store.php?slug=$1 [L]
+RewriteRule ^category/(.+)$ /category.php?slug=$1 [L]
+RewriteRule ^locate/(.+)$ /locate.php?slug=$1 [L]
+RewriteRule ^tag/(.+)$ /tag.php?slug=$1 [L]
+RewriteRule ^coupon/(.+)$ /coupon.php?slug=$1 [L]
+RewriteRule ^coupons/(.+)$ /coupons.php?slug=$1 [L]
+RewriteRule ^page/(.+)$ /page.php?slug=$1 [L]
+RewriteRule ^subscribe$ subscribe.php [NC,L]
+RewriteRule ^favourite$ favourite.php [NC,L]
+RewriteRule ^register$ register.php [NC,L]
+RewriteRule ^myprofile$ myprofile.php [NC,L]
+RewriteRule ^privacy_policy$ privacy_policy.php [NC,L]
+
+# END Coupon N Deal

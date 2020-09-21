@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+function change()
+{
+	var element=document.getElementById("image");
+	if(element.src.match("f.png"))
+	{
+		element.src="f1.png";
+	}
+	else
+	{
+		element.src="f.png";
+		
+	}
+
+}
+ 
+ function f2()
+{
+	 //  var i=000; 
+ 		var p=document.getElementById("hello");
+	//p.style.color="#"+i; 
+		var i;
+		for(i=100; i<=99999;i++)
+		{
+			p.style.color="#"+i;
+			p.style.fontSize="40px";
+			
+		}
+		
+}
+
+</script>
+</head>
+
+<body>
+<img src="f.png" id="image" onClick="change()">
+<p id="hello" onClick="f2()">Click ME</p>
+
+</body>
+</html>

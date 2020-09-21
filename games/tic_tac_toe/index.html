@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tic Tac Toe</title>
+	<!-- css and javascript -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="assets/custom.css">
+	<script src="assets/jquery-1.10.2.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		 <div class="row">
+		 	<div class="col-md-12">
+		 	<div class="panel-heading ">
+		 		<div class=" text-center"><h3 class="text-primary"> Tic Tac Toe </h3></div>
+		 		<hr>
+		 	</div>
+		 		<div class="show_div blind ">
+		 		<div class=" col-md-6 col-md-offset-3">
+		 			<div class="alert alert-success msg">
+		 				<b></b>
+		 			</div>
+		 			<a href="#" class="btn btn-primary btn-lg" onclick="window.location.reload();">Replay</a>	
+
+		 		</div>
+		 		<div class="clearfix"></div>
+		 		<hr>
+		 		</div>
+		 	
+		 		<div class="clearfix"></div>
+		 		<div class="col-md-6 col-md-offset-3">
+		 			<div id="1" class="col-md-4 square border-span"></div>
+		 			<div id="2" class="col-md-4 square border-span"></div>
+		 			<div id="3" class="col-md-4 square border-span"></div> 
+		 			<div class="clearfix"></div>
+		 			<div id="4" class="col-md-4 square border-span"></div>
+		 			<div id="5" class="col-md-4 square border-span"></div>
+		 			<div id="6" class="col-md-4 square border-span"></div>
+		 			<div class="clearfix"></div>
+		 			<div id="7" class="col-md-4 square border-span"></div>
+		 			<div id="8" class="col-md-4 square border-span"></div>
+		 			<div id="9" class="col-md-4 square border-span"></div>
+		 		</div>
+		 	</div>
+		 </div>
+	</div>
+</body>
+</html>
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog  modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+     <form action="#" id="user_form" novalidate method="POST">
+     	 <div class="modal-body">
+     	  <div class="row">
+     	  	<div class="col-md-12">
+     			
+     	  			<div class="form-group form-group-lg">
+     			            <input type="text" class="form-control" id="player_name_1" placeholder="Player 1 Name">
+     			            <span class="player_name_1 text-danger blind">Player Name Required </span>
+     			          </div>
+     			          <div class="form-group form-group-lg">
+     			            <input type="text" class="form-control" id="player_name_2" placeholder="Player 2 Name">
+     			            <span class="player_name_2 text-danger blind">Player Name Required </span>
+     			          </div>
+     	  	</div>
+     	  </div>
+     	</div>
+     	<div class="modal-footer">
+     	  <button type="submit" class="btn btn-primary" id="get_users">Save changes</button>
+     	</div>
+     	    </div>
+     </form>
+  </div>
+</div>
+
+<script>
+	$(document).ready(function() {
+ 
+
+		var click_count = winner1 = winner2 = 0;
+		click_value = "";
+		user_one_arr = [];
+		user_two_arr = [];
+		player1 = player2 = "";
+		 winning_arr = [ 
+	    				[ "1", "2", "3" ],[ "3", "2", "1" ],[ "4", "5", "6" ],[ "6", "5", "4" ],[ "7", "8", "9" ],
+	    				[ "9", "8", "7" ],[ "1", "4", "7" ],[ "7", "4", "1" ],[ "2", "5", "8" ],[ "8", "5", "2" ],
+	    				[ "3", "6", "9" ],[ "9", "6", "3" ],[ "1", "5", "9" ],[ "9", "5", "1" ],[ "3", "5", "7" ],
+	    				[ "7", "5", "3" ],
+					 ];
+		$("#myModal").modal("show");
+
+		$('#myModal').on('hidden.bs.modal', function () {
+    		if(player1 =="" || player2 ==""){
+    			$("#myModal").modal("show");
+    			check_user();
+    		}
+		});
+
+		$("#user_form").on("submit",function(event){
+			event.preventDefault();
+			player1 = $("#player_name_1").val();
+			player2 = $("#player_name_2").val();
+			check_user();
+		});
+	
+	
+
+	    $(".border-span").click(function(event){
+	    	var obj = $(this);
+	    	obj.addClass("clicked");
+	    	if(winner1==0 && winner2==0){
+	    		if(obj.html()==""){
+	    		id = obj.attr("id");
+		    	if(click_count%2==0){
+		    		click_value = "X";
+		    		user_one_arr.push(id);
+		    	} else {
+		    		click_value = "O";
+		    		user_two_arr.push(id);
+		    	}
+		    		 
+		    	obj.html(click_value).css("padding-bottom","0%");
+		    	click_count++;
+
+
+		    	for(i=0; i<winning_arr.length; i++){
+					user_one_win_count=0;
+					user_two_win_count=0;
+					for(j=0; j < winning_arr[i].length; j++){
+						// for user_one_to_win
+						if(isInArray(winning_arr[i][j], user_one_arr)){
+							user_one_win_count++;
+						}
+						// for user_two_to_win
+						if(isInArray(winning_arr[i][j], user_two_arr)){
+							user_two_win_count++;
+						}
+					}
+
+					 if(winner2==0){
+		    			 if(user_one_win_count>=3){
+		    			 	$(".show_div").slideDown('slow');
+		    			 	$(".msg").html('<b> '+player1 + "</b> Won");
+		    			 	draw_winning(winning_arr[i]);
+		    			 	winner1=1;
+		    			 	winner2=0;
+		    			 	break;
+		    			 }
+		    		}
+
+					 if(winner1==0){
+		    			 if(user_two_win_count>=3){
+		    			 	$(".show_div").slideDown('slow');
+		    			 	$(".msg").html("<b>"+player2 + "</b> Won");
+		    			 	draw_winning(winning_arr[i]);
+		    			 	winner2=1;
+		    			 	winner1=0;
+		    			 	break;
+		    			 }
+					}
+				}	
+	    	}
+
+
+
+	    	}
+
+	    	
+	    	if(click_count ==9 && winner1==0 && winner2==0){
+	    		$(".show_div").slideDown('slow');
+	    		$(".msg").html("Its a draw");
+	    	}
+		
+	    });
+	});
+
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
+function check_user(){
+	if(player1 ==""){
+		$(".player_name_1").removeClass('blind');
+	}
+	if(player2 ==""){
+		$(".player_name_2").removeClass('blind');
+	}
+
+	if(player1 !=""){
+		$(".player_name_1").addClass('blind');
+	}
+	if(player2 !=""){
+		$(".player_name_2").addClass('blind');
+	}
+
+	if(player1 !="" && player2 !="") {
+		$("#myModal").modal("hide");
+	}
+
+}
+function draw_winning(arr){
+	$.each(arr,function(index, el) {
+		$("#"+el).css({"background-color":"#DCFFDC"})
+	});
+}
+</script>

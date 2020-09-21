@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    padding-top: 50px;
+}
+header{ margin-bottom:25px;}
+
+.col-lg-4, .col-lg-6, .col-lg-8{
+    border: 1px solid #f5f5f5;
+    margin-top: 50px;
+	min-height:600px;
+	}
+
+.disabled
+{
+	pointer-events:none;
+}

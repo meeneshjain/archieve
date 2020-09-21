@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	background:url("cool.jpg");
+	color: white;
+	
+}
+h1
+{
+	font-size: 86px;
+margin: 0;
+font-family: cursive;
+margin-top: 13%;
+}
+h4
+{
+	margin: 0;
+font-size: 21px;
+}
+span
+{
+	margin: 4px 1px;
+padding: 5px 0 0 12px;
+}
+.error
+{
+	margin-left: 16px;
+
+	
+}
+h1 img
+{
+	display: inline;
+	float: left;
+	width: 141px;
+	height: 141px;
+	margin-left: 425px
+}
+.msg
+{
+	margin-left: 580px;
+}
+.list
+{
+	margin: 0 0 0 527px;
+}
+ul
+{
+	list-style:none;
+	float:left;
+}
+ul li
+{
+	text-decoration:none;
+	display:inline;
+	
+}

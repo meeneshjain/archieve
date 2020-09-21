@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+function valide()
+{
+	e=document.getElementById('demo2').value;
+	//alert(e);
+	if(isNaN(e))
+	{
+		document.getElementById("demo").innerHTML="Not a number";
+		
+		
+	}
+	else
+	{
+		document.getElementById("demo").innerHTML="Number - " + e;
+		//document.write(e);
+	}
+	
+	/*else
+	{
+		document.getElementById("demo").innerHTML="Number - " + e;
+		//document.write(e);
+	}*/
+	
+	
+}
+
+
+</script>
+</head>
+
+<body>
+<input type="text" id="demo2"  value="" ><input type="submit" onClick="valide()">
+<p id="demo"></p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+.container {
+  margin-top: 15px;
+}
+
+#save, .info {
+  display: none;
+}
+
+.info {
+  color: #ccc;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+}

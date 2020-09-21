@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script >
+function myfunction()
+{
+	//dont use the document.write syntax directly
+	document.getElementById("me").innerHTML="the fields should not remain empty";
+	
+}
+function add()
+{
+	
+	var x=5;
+	var y=5;
+	var z=x+y;
+	var name="meenesh"; 
+	reload="now reload the page";
+	document.write(z+"<br>");
+	document.write(name+"<br>");
+	document.write(reload);
+}
+</script>
+<title>normal form</title>
+</head>
+
+<body>
+meenesh jain
+<form>
+<p id="me">enter the values </p>
+First name <input type="text"> <br/>
+</form>
+<button type="button" onclick="add()"> click to add</button>
+
+</body>
+</html>

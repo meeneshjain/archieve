@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<title>Hexagoon - Responsive HTML5 Coming Soon &amp; Domain Sale Template</title>
+	<!-- Framework CSS -->
+<link rel="stylesheet" href="style.css" media="screen" />
+<link href="assets/src/prettify.css" type="text/css" rel="stylesheet" />
+    <script src="assets/src/prettify.js" type="text/javascript"></script>
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:10px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<h1 align="center">&ldquo;Hexagoon - Responsive HTML5 Coming Soon &amp; Domain Sale Template&rdquo;</h1>
+	<p class="subtitle">Created: 21/Oct/2013<br>
+					By: MegaDrupal<br>
+					Email: <a href="mailto:info@megadrupal.com">info@megadrupal.com</a><br>
+					Website: <a href="http://megadrupal.com">http://megadrupal.com</a><br>
+	<div class="separater"></div>
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a>
+			<ol>
+				<li><a href="#htmlstructure">HTML Structure</a></li>
+                <li><a href="#styleop">Style options</a></li>
+				<li><a href="#countdown">CountDown Section</a></li>
+				<li><a href="#progress">Progress Section</a></li>
+                <li><a href="#notify">Notify Form</a></li>
+				<li><a href="#contactform">Contact Form</a></li>
+				<li><a href="#domain">Domain Sale Form</a></li>
+				<li><a href="#imagegrid">Image Grid Background</a></li>
+				<li><a href="#imagebg">Fullscreen Image Slideshow</a></li>
+				<li><a href="#imagesection">Fullscreen Image Section Background</a></li>
+				<li><a href="#video">Fullscreen Video Background</a></li>
+				
+				</ol>
+      </li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>			
+		</ol>
+		<div class="separater"></div>
+</div>
+<div class="wrapper">
+<h3 id="htmlStructure"><strong>I) HTML Structure</strong> - <a href="#toc">top</a></h3>
+<p>Hexagoon is a fluid theme with indented and intuitively spaced HTML. You will find in-line commenting allthroughout the HTML so that you can always figure out what section of the layout you are in. The backbone of every page is as follows:</p>
+		<pre id="normalpages" class="prettyprint lines">
+&lt;div id=&quot;md-comingsoon&quot; class=&quot;md-comingsoon&quot;&gt;
+    &lt;div class=&quot;md-mask&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;ri-grid&quot; class=&quot;ri-grid ri-grid-size-2 ri-shadow clearfix&quot;&gt;
+        	{Animated Responsive Image Grid}
+		&lt;/div>
+	&lt;/div>&lt;!-- #ri-grid --&gt;
+    &lt;div class=&quot;md-wrap&quot;&gt;
+    	&lt;div id=&quot;md-sections&quot; class=&quot;md-sections&quot;&gt;
+        	{Section code}
+        &lt;/div&gt;&lt;!-- /.md-sections --&gt;
+        
+        &lt;div id=&quot;md-arrow&quot; class=&quot;md-arrow&quot;&gt;
+            &lt;div id=&quot;arrow-prev&quot; class=&quot;icon-angle-up md-arrow-top&quot;&gt;&lt;/div&gt;
+            &lt;div id=&quot;arrow-next&quot; class=&quot;icon-angle-down md-arrow-bottom&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.md-arrow --&gt;
+        
+        &lt;div class=&quot;md-pages clearfix&quot;&gt;
+            {Paging code}
+        &lt;/div&gt;&lt;!-- /.md-pages --&gt;
+	&lt;/div&gt;&lt;!-- /.md-wrap --&gt;
+&lt;/div&gt;
+		</pre>	
+	
+    <div class="separater"></div>
+        <h5 id="styleop">Style options</h5>
+		<p>You can change style (green with white opacity) in a second by chhange body class name from .md-option-1 to .md-option-2</p>
+        <p>You can add new style by copy CSS code from style.css and create your own.</p>
+        
+        
+        
+        <div class="separater"></div>
+        <h5 id="slider">CountDown Section</h5>
+		<p>CountDown Section is simple, it contains logo and count down numbers. Here is the HTML structure</p>
+		<pre class="prettyprint lines">
+			&lt;section class=&quot;md-section md-home&quot;&gt;
+            	&lt;div class=&quot;md-content&quot;&gt;
+                	&lt;div class=&quot;md-logo&quot;&gt;
+                    	&lt;h1 class=&quot;rs&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/h1&gt;
+                        &lt;/div&gt;
+                        &lt;h1 class=&quot;md-title&quot;&gt;Our website is coming soon&lt;/h1&gt;
+                        &lt;div id=&quot;defaultCountdown&quot; class=&quot;clearfix&quot;&gt;&lt;/div&gt;&lt;!-- /countdown --&gt;
+            	&lt;/div&gt;&lt;!-- /.md-content --&gt;
+            &lt;/section&gt;&lt;!-- /.md-home --&gt;
+		</pre>
+		
+              
+		<div class="separater"></div>
+        <h5 id="notify">Progress Section</h5>
+		<p>Here is the HTML structure for progress section</p>
+		<pre class="prettyprint lines">
+			&lt;section class=&quot;md-section md-home md-home-progress&quot;&gt;
+            	&lt;div class=&quot;md-content&quot;&gt;
+                	&lt;div class=&quot;md-logo&quot;&gt;
+                    	&lt;h1 class=&quot;rs&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/h1&gt;
+                    &lt;/div&gt;
+                    &lt;h1 class=&quot;md-title&quot;&gt;Our website is coming soon&lt;/h1&gt;
+                    &lt;p class=&quot;md-description&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam&lt;/p&gt;
+                    &lt;div class=&quot;md-progress&quot;&gt;
+                    	&lt;div class=&quot;md-progess-change&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;&lt;!-- /.md-content --&gt;				
+            &lt;/section&gt;&lt;!-- /.md-home-progress --&gt;
+			</pre>
+
+		<div class="separater"></div>
+		<h5 id="contactform">Notify form</h5>
+              <p>Notify form auto save emails to server/emails.txt file. You can change file name/location by edit server/notify.php file, line 40:</p>
+             <pre class="prettyprint lines"> 
+$file = fopen('emails.txt', 'a+');
+</pre>
+		<div class="separater"></div>
+		<h5 id="contactform">Contact form</h5>
+		<p>To configure contact form send email to your email address, open server/message.php, find line 47:</p>
+		<pre class="prettyprint lines">
+$to = "info@megadrupal.com";
+		</pre>
+		<p>and change email address to your email address</p>
+        
+        <div class="separater"></div>
+		<h5 id="contactform">Domain Sale form</h5>
+        <p>To configure domain sale form send email to your email address, open server/domain.php, find line 56:</p>
+		<pre class="prettyprint lines">
+$to = "info@megadrupal.com";
+		</pre>
+		<p>and change email address to your email address</p>
+        
+	<div class="separater"></div>
+  <h5 id="contactform">Image Grid Background</h5>
+    <p>To use image grid background, just insert this HTML code before &lt;div class=&quot;md-wrap&quot;&gt; code</p>
+    <pre class="prettyprint lines"> 
+&lt;div class=&quot;md-mask&quot;&gt;&lt;/div&gt;
+	&lt;div id=&quot;ri-grid&quot; class=&quot;ri-grid ri-grid-size-2 ri-shadow clearfix&quot;&gt;
+    	&lt;ul class=&quot;rs&quot;&gt;
+        	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;img/items/item1.jpg&quot; alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+            {YOUR IMAGE HERE}
+		&lt;/ul&gt;
+	&lt;/div&gt;&lt;!-- #ri-grid --&gt;
+    </pre>
+    
+    <div class="separater"></div>
+	<h5 id="contactform">Fullscreen Image Slideshow</h5>
+  <p>To use fullscreen image slideshow, open script.js, go to line 127 and edit to your image url</p>
+  <pre class="prettyprint lines"> 
+{image : 'img/s1.jpg'},
+{image : 'img/s2.jpg'},
+{image : 'img/s3.jpg'},
+{image : 'img/s4.jpg'},
+{image : 'img/s5.jpg'}
+    </pre>
+    <p>And add this HTML code before close body tag</p>
+    <pre class="prettyprint lines"> &lt;div id=&quot;supersized-loader&quot;&gt;&lt;/div&gt;&lt;ul id=&quot;supersized&quot;&gt;&lt;/ul&gt;
+    </pre>
+    <div class="separater"></div>
+  <h5 id="contactform">Fullscreen Image Section Background</h5>
+  <p>To use fullscreen image section background, just insert this code before close section tags:</p>
+    <pre class="prettyprint lines"> 
+&lt;div class=&quot;md-mask&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;md-bg-image&quot;&gt;&lt;img src=&quot;img/s2.jpg&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+</pre>
+	<div class="separater"></div>
+	<h5 id="contactform">Fullscreen Video Background</h5>
+  <p>To use fullscreen video background, just insert this HTML code before &lt;div class=&quot;md-wrap&quot;&gt; code</p>
+    <pre class="prettyprint lines"> 
+&lt;div class=&quot;ri-grid ri-grid-size-2 ri-shadow clearfix&quot;&gt;
+	&lt;div class=&quot;ri-blue&quot;&gt;&lt;/div&gt;
+    &lt;video width=&quot;1920&quot; height=&quot;1080&quot; autoplay loop&gt;
+    	&lt;source src=&quot;video/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+        &lt;source src=&quot;video/video.ogg&quot; type=&quot;video/ogg&quot;&gt;
+        &lt;source src=&quot;video/video.ogg&quot; type=&quot;video/ogg&quot;&gt;
+        Your browser does not support the video tag.
+	&lt;/video&gt;
+&lt;/div&gt;&lt;!-- #ri-grid --&gt;
+    </pre>
+</div><!--wrapper-->
+<div class="wrapper">
+<h3 id="cssFiles"><strong>II) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+<p>This theme uses <strong>style.css</strong> file as main CSS file.</p>
+		<h6>style.css</h6>
+		<p>Main CSS files in this theme is style.css that contains all of specific stylings for the theme.The file is separated into 10 sections using labels as follows:</p> 
+
+<pre class="prettyprint lines">		
+1.	Reset
+2.	Common style
+3.	Button style
+4.	Options style (you can add your style here)
+5.	Home style
+6.	Notify style
+7.	Contact style
+8.	Domain for sale style
+9.	Follow style
+10.	Animated Responsive Image Grid
+</pre>
+<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+		<h6>responsive.css</h6> 
+		<p>responsive.css contains styling for media queries that allows us to tailor to different resolutions and devices without changing the content. The file is separated into sections as follows:</p>
+		<pre class="prettyprint lines">	
+@media screen and (max-width: 1024px) {
+	
+{SOME CODES}
+
+}
+
+@media screen and (max-width: 700px ) {
+	
+{SOME CODES}
+
+}
+
+@media screen and (max-width: 570px) {
+
+{SOME CODES}
+
+}
+
+@media screen and (max-width: 380px) {
+
+{SOME CODES}
+
+}
+
+@media screen and (max-width: 280px) {
+
+{SOME CODES}
+
+}
+   </pre>	
+   <p>If you would like to edit styling of the specific device width, simply find the appropriate label in the <strong>responsive.css</strong> file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+   
+		<h4>Additional css files</h4>
+		<ol>
+            <li><strong>ie8.css</strong> - fix IE 8 problem</li>
+            <li><strong>normalize.css</strong> - HTML5 reset</li>
+            <li><strong>responsive.css</strong> - Responsive CSS</li>
+            <li><strong>jquery.countdown.css</strong> - Coundown style</li>
+            <li><strong>supersized.css</strong> - Fullscreen background slideshow</li>
+            <li><strong>supersized.shutter.css</strong> - Fullscreen background slideshow style</li>
+		</ol>
+</div><!--wrapper-->
+<div class="wrapper">
+<h3 id="javascript"><strong>III) JavaScript</strong> - <a href="#toc">top</a></h3>
+<p>This theme imports following Javascript files.</p>
+		
+		<ol>
+			<li><strong>jquery-1.9.1.min.js</strong> - jQuery library</li>
+			<li><strong>jquery.countdown.js</strong> - jQuery Count down </li>	
+			<li><strong>jquery.cycle2.js</strong> - jQuery cycle 2</li>
+			<li><strong>jquery.easing.min.js</strong> - Easing library</li>
+			<li><strong>jquery.form.js</strong> - allows you to upgrade HTML forms to use AJAX</li>
+			<li><strong>jquery.gridrotator.js</strong> - Animated Responsive Image Grid</li>
+			<li><strong>jquery.mousewheel.js</strong> - Mousewheel library</li>
+			<li><strong>jquery.tweet.min.js</strong> - Get tweet from Twitter</li>
+			<li><strong>jquery.ulslide.js</strong> - Section slide</li>
+			<li><strong>jquery.validate.min.js</strong> - validate contact form and comment form</li>
+			<li><strong>.js</strong> - </li>
+    	<li><strong>modernizr.js</strong> - Modernizr library</li>
+		<li><strong>supersized.3.2.7.js</strong> - Fullscreen background slideshow</li>
+      <li><strong>supersized.shutter.js</strong> - Fullscreen background slideshow theme</li>
+			
+      <li><strong>script.js</strong> - contains all custom script</li>
+		</ol>
+		<p>Except <strong>script.js</strong>, all of the plugins are packed, so you don't need to manually edit anything in these files. The only necessary thing to know is how to call the method. You can refer to the website of the plugin author I listed in the <strong>"Sources and Credits"</strong> section  to learn more about them.</p>  
+		<p><strong>script.js</strong> contains custom scripts and scripts to call method for above plugin. The file is separated in to sections with appropriate label.</p>
+		
+		<p>To configure Twitter, you need to change script.js file at line 66 and 69. You need to have a twitter App for your usage in order to obtain OAuth credentials, see <a href="https://dev.twitter.com/apps">https://dev.twitter.com/apps</a> for help.</p>
+		<p>To edit count down time, you can change it by edit script.js file, line 46: austDay = new Date(2014, 9, 26);<br />
+first number is year, second is month (from 0 to 11), third is day, you can add hour &amp; minute too (by adding more number after 26).
+		</p>
+  <pre class="prettyprint lines">	
+/* GRID ROTATOR
+---------------------------------------------------------- */	
+
+{SOME CODES}
+
+/* COUNTDOWN
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* TWITTER
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* SECTION SLIDE
+---------------------------------------------------------- */	
+
+{SOME CODES}
+
+/* BACKGROUND SLIDESHOW
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* VALIDATE SUBSCRIBE FORM
+---------------------------------------------------------- */	
+{SOME CODES}
+
+/* VALIDATE MESSAGE FORM
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* VALIDATE DOMAIN SALE FORM
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* RESIZE FUNCTION
+---------------------------------------------------------- */
+
+{SOME CODES}
+        </pre>		
+</div><!--wrapper-->
+<div class="wrapper">
+	<h3 id="credits"><strong>IV) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+	<p>I've used the following images, icons or other files as listed.</p>
+	<ul>
+		<li><a target="_blank" href="http://www.jquery.com">jQuery</a></li>		
+		<li><a href="http://keith-wood.name/countdown.html " target="_blank">jQuery Countdown</a></li>
+        <li><a href="http://www.buildinternet.com/project/supersized/" target="_blank">Supersized - fullscreen background slideshow</a></li>
+        <li><a href="http://tympanus.net/codrops/2012/08/02/animated-responsive-image-grid/" target="_blank">Animated Responsive Image Grid</a></li>
+        <li><a href="https://github.com/StanScates/Tweet.js-Mod" target="_blank">Tweet.js-Mod</a></li>
+        <li><a href="http://4coder.info/en/code/jquery-plugins/ulslide/" target="_blank">ulslide</a></li>
+        <li><a href="http://modernizr.com/" target="_blank">Modernizr</a></li>
+		<li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" target="_blank">form validator</a></li>
+        <li><a href="http://malsup.com/jquery/form/" target="_blank">jquery.form.js</a></li>
+        <li><a href="http://malsup.com/jquery/cycle2/" target="_blank">jQuery cycle 2</a></li>
+
+        <li><a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a></li>
+		<li><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a></li>
+	</ul>
+</div>
+<div class="wrapper">
+	<p>Thank you so much for purchasing this template. If you have any question relating to the themes please post your question to support forum <a href="http://wpprime.com/forum">http://wpprime.com/forum</a></p> 
+	<p class="append-bottom alt large"><strong>MegaDrupal</strong><br>
+    Email: <a href="mailto:info@megadrupal.com">info@megadrupal.com</a><br>
+	Website: <a href="http://megadrupal.com">http://megadrupal.com</a><br>
+	<p><a href="#toc">Go To Table of Contents</a></p>
+</div>
+</body>
+<script type="text/javascript" src="assets/prettify/prettify.js"></script>
+	<script> prettyPrint(); </script>
+</html>

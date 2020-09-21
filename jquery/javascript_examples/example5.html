@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+function valide()
+{
+	e=document.getElementById('demo2').value;
+	//alert(e);
+	if(isNaN(e))
+	{
+		document.getElementById("demo").innerHTML="Not a number";
+		
+		
+	}
+	else
+	{
+		document.getElementById("demo").innerHTML="Number - " + e;
+		//document.write(e);
+	}
+	
+	/*else
+	{
+		document.getElementById("demo").innerHTML="Number - " + e;
+		//document.write(e);
+	}*/
+	
+	
+	
+	
+}
+
+
+</script>
+</head>
+
+<body>
+<input type="text" id="demo2"  value="" ><input type="submit" onClick="valide()">
+<p id="demo"></p>
+
+<script>
+var x , y;
+x=3;
+y=5
+z=x+y
+document.write(z + "<br>");
+document.write(z);
+document.write("<br>");
+_x=10 ;
+document.write(_x);
+
+
+var person=
+{
+	firstname : "meenesh",
+	lastname : "jain",
+	no 	     : 9993755651
+};
+
+document.write("<br>",person.no);
+
+
+
+var per=new Object();
+per.firstname="John";
+per.lastname="hello";
+per.age=50;
+</script>
+
+
+
+
+</body>
+</html>
+
+<p>hello</p>

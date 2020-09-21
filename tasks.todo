@@ -1,0 +1,142 @@
+ Comfort Cam Pro :
+ Remeber:
+--------------------------------------------------------------------
+NOTE: (keep this as the values for the following )
+subscription_type  : 1 = monthly , 2 = yearly, 3 = free, 
+Platform          1 = android,   2 = ios  
+app_id = 3 
+share_type   1= admin | 2 = family  | 3 = baby_sitter
+ 
+
+dev path for send mail:
+include '../../../../send_mail/send_mail_function.php'; 
+
+live path for send mail: 
+include '../../../send_mail/send_mail_function.php'; 
+ 
+
+Monthly:
+SELECT ROUND(SUM(amount)) as total_amount, MONTHNAME(created_date),month(created_date) as month,year(created_date) as year FROM subscription_data GROUP BY month(created_date),year(created_date) ORDER by total_amount DESC
+Yearly:
+SELECT ROUND(SUM(amount)) as total_amount, year(created_date) as year FROM subscription_data GROUP BY year(created_date) ORDER by total_amount DESC
+
+
+
+25-06-2017 (calculation and subscription data for free users entry):
+ 1ce9c0da7658f1569c60bb9fa3d7395d
+ 
+ db - renaultsurvey1
+ login - renaultsurvey1
+ pass = Renaultsurvey1
+ 
+ 
+ 
+Participant link: http://peoplesmart.co.za/renaults.html
+Manager link: http://peoplesmart.co.za/renaultm.html
+Subordinate link: http://peoplesmart.co.za/renaulto.html
+
+
+SQL:
+  
+ALTER TABLE `users_deleted`
+ADD `is_temp_pwd` tinyint NOT NULL AFTER `is_deleted`;
+    
+DROP TABLE IF EXISTS `friends`;
+CREATE TABLE `friends` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `friend_id` int(11) NOT NULL,
+  `relation` enum('1','2','3') NOT NULL COMMENT '1 - Family,  2 - Friends, 3 - Professionals',
+  `status` enum('1','2','3') NOT NULL COMMENT '1 - accepted,  2 - pending, 3 - rejected',
+  `is_deleted` tinyint(4) NOT NULL DEFAULT '0',
+  `created_date` datetime NOT NULL,
+  `updated_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+ALTER TABLE `notification`
+CHANGE `type` `type` enum('admin','subscribtion','share','invite_friend') COLLATE 'latin1_swedish_ci' NOT NULL AFTER `is_read`;
+
+ALTER TABLE `friend_invited_user`
+ADD `relationship` tinyint(4) NOT NULL AFTER `status`;
+
+ALTER TABLE `med_appointment_event`
+CHANGE `camera_id` `camera_id` varchar(200) NOT NULL AFTER `family_id`
+
+Alter user:
+ALTER TABLE `users`
+ADD `last_login_datetime` datetime NOT NULL AFTER `trial_period`;
+
+for new field:
+    ALTER TABLE `users`
+ADD `care_for` varchar(250) COLLATE 'latin1_swedish_ci'  NULL;
+
+ALTER TABLE `users_deleted`
+ADD `care_for` varchar(250) COLLATE 'latin1_swedish_ci'  NULL;
+
+Max login time : 
+
+app id :-  794c5b36-9e41-4d10-9e5e-c701c4a6dd8e
+Token  :-  807ce826edba4907142fb916386d51de7297c59acf0c1872c2d78a95c5dcebab
+API key :- MjA4ODdkZDctMDcxZS00YmYxLTlhNDEtOGE0YTVhMThhNmQx
+
+auto pedigree:
+    
+   
+host - sql9.jnb1.host-h.net
+user - motusxprmb_4 / c5B9GBTHDq8
+db - auto_pedigree 
+
+
+beci360:
+
+sql36.jnb1.host-h.net
+
+teanatmyfe_2 / Hj8735h4uV8
+
+ALTER TABLE `users`
+ADD `care_for` varchar(250) NOT NULL AFTER `amazon_review_date`;
+
+
+Trendin Hostgator:
+    
+https://gator3313.hostgator.com:2083
+appswebmedia / Qg7ElF2qg*mOwjhFgK
+
+
+database user :
+appswebm_trendin
+trendin@123
+
+database user:
+appswebm_trendin
+
+
+alter queries - trendin:
+-- admin login 
+ALTER TABLE `admin_login`
+ADD `user_type` int(11) NOT NULL COMMENT '1 for admin | 0 for store_user' AFTER `id`,
+ADD `email` varchar(222) COLLATE 'latin1_swedish_ci' NOT NULL AFTER `user_type`,
+ADD `first_name` varchar(222) COLLATE 'latin1_swedish_ci' NOT NULL,
+ADD `last_name` varchar(222) COLLATE 'latin1_swedish_ci' NOT NULL AFTER `first_name`,
+ADD `mobile` varchar(222) COLLATE 'latin1_swedish_ci' NOT NULL AFTER `last_name`,
+ADD `address` varchar(222) COLLATE 'latin1_swedish_ci' NOT NULL AFTER `mobile`;
+
+-------------------------------------------------------------
+
+Booking System:
+  ALter Query:
+  
+ALTER TABLE `consent_form_submit`
+ADD `accepted_disagree` int(11) NOT NULL AFTER `administrators`,
+ADD `declined_consent` int(11) NOT NULL AFTER `accepted_disagree`;
+
+ALTER TABLE `jobs`
+ADD `attached_doc` varchar(250) COLLATE 'latin1_swedish_ci' NOT NULL AFTER `cost`;
+
+beci360 feedback:
+  ✔ Participant test only once @done(18-07-10 00:15)
+  ✔ Project Adding rater data showing it wrong @done(18-07-10 00:15)
+  
+  X3i00BUkJ52F17fQ27vd

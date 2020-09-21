@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<script>
+
+function fun()
+{
+	var y=document.getElementById("para");
+	var x =confirm();
+	if(x==true)
+	{
+		y.innerHTML="Ok ";
+	}
+	else
+	{
+		y.innerHTML="not ok ";
+		y.innerHTML="<input type='text'>";
+	}
+
+
+
+}
+
+
+function fun3()
+{
+	document.getElementById("para2").innerHTML="Enter age - <input type='text'>";
+}
+function fun4()
+{
+	document.getElementById("para2").innerHTML="Enter name - <input type='text'>";
+}
+
+function f4()
+{
+	var f = document.getElementById("div1");
+	f.style.display="block";
+}
+</script>
+</head>
+
+<body>
+<p id="para"></p>
+<button onClick="f4()">click me</button>
+
+Male <input type="radio" name="gender" onClick="fun3()" > female  <input type="radio" name="gender" onClick="fun4()" >
+<p id="para2"></p>
+<div id="div1" style="display:none" >
+
+<table width="464" height="267"  border="0" class="tablesorter" id="myTable" >
+ 
+  <tr>
+    <td colspan="2" ><font color="#FF0000" size="+1"><?php echo $error;?></font></td>
+    </tr>
+  <tr>
+    <td width="160" height="49" ><span>User-id:</span></td>
+    <td width="278" ><input type="text" name="uid1" size="40" maxlength="50"></td>
+  </tr>
+  <tr>
+    <td height="59">Password :</td>
+    <td ><input type="password"  size="40" name="pass1" maxlength="50"></td>
+  </tr>
+  <tr>
+    <td height="53"  >Designation : </td>
+    <td >
+    <select name="Designation">
+    <option name="">Set Priveledge</option>
+    <option name="hr">human Resource</option>
+    <option name="Faculty">Faculty</option>
+    <option name="student">Student</option>
+    
+    
+    </select></td></tr>
+	<tr><td colspan="2" align="center">
+    <input type="submit" name="Enter" value="Enter" class="submit-green"><input type="submit" name="Cancel" Value="Cancel" class="submit-gray"></td></tr></table>
+
+</div>
+</body>
+</html>
+

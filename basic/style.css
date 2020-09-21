@@ -1,0 +1,38 @@
+body
+{
+background-image:url('wood3.jpg');
+}
+
+table, th, td
+{
+
+border-collapse:collapse;
+vertical-align:middle;
+
+}
+tr:hover td
+{
+background-color:grey ;
+color:black;
+}
+table th
+{
+color:black;
+size=22px;
+width=30px;
+}
+.button1{
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding: 15px 15px;
+	text-decoration: none;
+	background-color:#D2691E;
+}
+
+.button1:hover
+{
+background-color:#A52A2A;
+}
+tr:nth-child(odd)	{ background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }

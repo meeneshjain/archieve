@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Our website is coming soon</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+	<link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"/>	
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+	<!--[if lte IE 7]>
+  		<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome-ie7.min.css">
+	<![endif]-->
+	<!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ie8.css"/>
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/jquery.gridrotator.js"></script>
+	<script type="text/javascript" src="js/jquery.countdown.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.ulslide.js"></script>
+    <script type="text/javascript" src="js/jquery.tweet.min.js"></script>
+    <script type="text/javascript" src="js/supersized.3.2.7.js"></script>
+    <script type="text/javascript" src="js/supersized.shutter.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle2.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body class="md-option-1"><!-- #md-option-2-->
+	<div id="md-comingsoon" class="md-comingsoon">
+		<!-- <div class="md-mask"></div> -->
+		<div class="ri-grid ri-grid-size-2 ri-shadow clearfix">
+		    <div class="ri-blue"></div>
+		    <video width="1920" height="1080" autoplay loop>
+			  <source src="video/video.mp4" type="video/mp4">
+			  <source src="video/video.ogg" type="video/ogg">
+			  <source src="video/video.ogg" type="video/ogg">
+			  Your browser does not support the video tag.
+			</video> 
+		</div><!-- #ri-grid -->
+		<div class="md-wrap">
+			<div id="md-sections" class="md-sections">
+				<section class="md-section md-home">
+					<div class="md-content">
+						<div class="md-logo">
+							<h1 class="rs"><a href="#"></a></h1>
+						</div>
+						<h1 class="md-title">Our website is coming soon</h1>
+						<div id="defaultCountdown" class="clearfix"></div><!-- /countdown -->
+					</div><!-- /.md-content -->
+				</section><!-- /.md-home -->
+
+				<section class="md-section md-notify">
+					<div class="md-content">
+						<h1 class="rs md-title">Notify me when its ready</h1>
+						<p class="md-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div id="notify-content">
+                            <form id="md-subscribe-form" action="server/notify.php" method="post">
+                                <div class="md-form clearfix">
+                                    <div class="notify-input"><input id="notify-email" type="text" class="md-input" placeholder="Enter your email here" name="email"></div>
+                                    <button type="submit" class="md-button" data-hover="Submit"><span>Submit</span></button>
+                                </div>
+                            </form>
+                        </div>
+					</div><!-- /.md-content -->
+				</section><!-- /.md-notify -->
+					
+				<section class="md-section md-contact">
+					<div id="message-content" class="md-content">
+						<form id="md-message-form" action="server/message.php" method="post">
+							<h1 class="rs md-title">Send us a message</h1>
+							<div class="md-form"><input type="text" id="msg-name" class="md-input" placeholder="Your name" name="name"></div><!-- /.md-form -->
+							<div class="md-form"><input type="text" id="msg-email" class="md-input" placeholder="Your email" name="email"></div><!-- /.md-form -->
+							<div class="md-form"><textarea placeholder="Message" id="msg-message" name="message"></textarea></div><!-- /.md-form -->
+							<div class="md-form"><button type="submit" class="md-button">Send</button></div><!-- /.md-form -->
+						</form>
+					</div><!-- /.md-content -->
+				</section><!-- /.md-contact -->
+
+				<section class="md-section md-follow">
+					<div class="md-content">
+						<h1 class="rs md-title">You can follow us for all future updates</h1>
+						<div id="cl-effect-8" class="md-follow-items">
+							<a href="#" class=""><i class="icon-facebook"></i></a>
+							<a href="#" class=""><i class="icon-twitter"></i></a>
+							<a href="#" class=""><i class="icon-google-plus"></i></a>
+							<a href="#" class=""><i class="icon-linkedin"></i></a>
+							<a href="#" class=""><i class="icon-dribbble"></i></a>
+						</div>
+						<div class="md-follow">
+							<div class="md-twitter">
+								<a href="#" class="icon-twitter"></a>
+								<div id="tweets" class="md-tw-des">
+								</div>
+							</div>
+						</div>
+					</div><!-- /.md-content -->
+				</section><!-- /.md-follow -->
+			</div><!-- /.md-sections -->
+			<div id="md-arrow" class="md-arrow">
+				<div id="arrow-prev" class="icon-angle-up md-arrow-top"></div>
+				<div id="arrow-next" class="icon-angle-down md-arrow-bottom"></div>
+			</div><!-- /.md-arrow -->
+			<div class="md-pages clearfix">
+				<ul id="md-pager" class="rs">
+					<li class="md-page"><a href="#">1</a></li>
+					<li class="md-page"><a href="#">2</a></li>
+					<li class="md-page"><a href="#">3</a></li>
+					<li class="md-page"><a href="#">4</a></li>
+				</ul>
+			</div><!-- /.md-pages -->
+		</div><!-- /.md-wrap -->
+	</div><!-- /md-comingsoon -->
+</body>
+</html>

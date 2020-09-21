@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>validation form</title>
+<script type="text/javascript">
+function validate()
+{
+var x=document.forms["myform"]["first"].value;
+var y=document.forms["myform"]["last"].value;
+
+if(x==null || x=="")
+{
+	alert("please enter the first name");
+	
+}
+if(y==null || y=="")
+{
+	alert("please enter the second name");
+}
+}
+
+</script>
+</head>
+
+<body>
+<form name="myform" onsubmit="validate()" action="demo_form.asp" method="post">
+<b>First name <input type="text" value="" name="first"   />
+</br></b>
+Last name <input type="text" value="" name="last" />
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
